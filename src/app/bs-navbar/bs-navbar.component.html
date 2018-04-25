@@ -9,7 +9,11 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink="/shopping-cart">購物車</a>
             </li>
-
+            <ng-template #anonymousUser>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login">登入</a>
+                </li>
+            </ng-template>
             <li ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
                 <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{ appUser.name }}
