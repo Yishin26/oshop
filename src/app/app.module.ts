@@ -9,8 +9,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppComponent } from './app.component';
 import {RouterModule} from '@angular/router';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule} from '@angular/forms';
 
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
 import { HomeComponent } from './home/home.component';
@@ -24,10 +24,12 @@ import { LoginComponent } from "./login/login.component";
 import { UserService } from './user.service';
 import { AdminAuthGuardService } from './admin-auth-guard.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
+import { CategoryService } from './category.service';
+import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent, 
     BsNavbarComponent,
     HomeComponent,
     ProductsComponent,
@@ -45,6 +47,7 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    FormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
@@ -62,7 +65,7 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
       { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuardService, AdminAuthGuardService]  },
     ])
   ],
-  providers: [AuthService,AuthGuardService,UserService,AdminAuthGuardService],
+  providers: [AuthService,AuthGuardService,UserService,AdminAuthGuardService,CategoryService,ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
