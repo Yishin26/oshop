@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CategoryService } from '../../category.service';
 import { ProductService } from '../../product.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CustomFormsModule } from 'ng2-validation';
 import 'rxjs/add/operator/take';
 
 @Component({
@@ -12,7 +13,7 @@ import 'rxjs/add/operator/take';
 export class ProductFormComponent implements OnInit {
 
   categories$;
-  product={ };
+  product:any={ };
   id;
   constructor(
     private router: Router, 

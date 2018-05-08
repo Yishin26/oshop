@@ -15,7 +15,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">$</span>
                     </div>
-                    <input #price="ngModel" [(ngModel)]="product.price" name="price" id="price" type="number" class="form-control" required [min]="0">
+                    <input #price="ngModel" [(ngModel)]="product.price" name="price" id="price" type="number" class="form-control" [min]="0" required>
 
                 </div>
                 <div class="alert alert-danger" *ngIf="price.touched && price.invalid">

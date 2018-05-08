@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AuthGuardService } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { ProductsComponent } from './products/products.component';
@@ -12,6 +13,8 @@ import {RouterModule} from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
 import {CustomFormsModule} from 'ng2-validation';
+import { DataTableModule } from 'angular5-data-table';
+
 
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
 import { HomeComponent } from './home/home.component';
@@ -50,6 +53,7 @@ import { ProductService } from './product.service';
     AngularFireAuthModule,
     FormsModule,
     CustomFormsModule,
+    DataTableModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
@@ -70,6 +74,10 @@ import { ProductService } from './product.service';
     ])
   ],
   providers: [AuthService,AuthGuardService,UserService,AdminAuthGuardService,CategoryService,ProductService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
+
 })
 export class AppModule { }
