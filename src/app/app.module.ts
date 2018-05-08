@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 import { AuthGuardService } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { ProductsComponent } from './products/products.component';
@@ -53,7 +53,7 @@ import { ProductService } from './product.service';
     AngularFireAuthModule,
     FormsModule,
     CustomFormsModule,
-    DataTableModule,
+    
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
@@ -75,9 +75,7 @@ import { ProductService } from './product.service';
   ],
   providers: [AuthService,AuthGuardService,UserService,AdminAuthGuardService,CategoryService,ProductService],
   bootstrap: [AppComponent],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ],
+  
 
 })
 export class AppModule { }

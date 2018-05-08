@@ -1,4 +1,4 @@
-import { DataTableModule } from 'angular-4-data-table';
+
 import { Product } from './../../models/product';
 import { ProductService } from './../../product.service';
 import { Component, OnInit } from '@angular/core';
