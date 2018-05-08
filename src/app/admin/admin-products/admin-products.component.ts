@@ -1,3 +1,4 @@
+import { ProductService } from './../../product.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-products.component.css']
 })
 export class AdminProductsComponent implements OnInit {
-  
-  constructor() { 
-    
+  product$;
+  constructor(private productService: ProductService) { 
+    this.product$= this.productService.getAll();
   }
 
   ngOnInit() {
