@@ -53,7 +53,7 @@ import { ProductService } from './product.service';
     AngularFireAuthModule,
     FormsModule,
     CustomFormsModule,
-    
+    DataTableModule.forRoot(),
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
