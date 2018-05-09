@@ -19,8 +19,7 @@ export class ProductsComponent {
     route: ActivatedRoute,
     productService: ProductService
   ) {
-    productService
-      .getAll()
+    productService.getAll()
       .switchMap(products => {
         this.products = products;
         return route.queryParamMap;

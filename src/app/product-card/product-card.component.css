@@ -1,7 +1,15 @@
 .card {
     margin-bottom: 30px;
+    border: transparent;
+    border-radius: 5px;
+    box-shadow: 0px 2px 20px rgb(189, 189, 189);
 }
 
 .card-footer {
     padding: 0;
+}
+
+.card-footer a {
+    border-radius: 0px 0px 5px 5px;
+    border: transparent;
 }
